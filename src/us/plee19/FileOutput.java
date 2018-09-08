@@ -3,13 +3,19 @@ package us.plee19;
 import java.io.*;
 
 /**
- * Created by mgreen14 on 12/27/17.
+ * Creates class to handle file output methods.
+ * @author plee19
+ * @version 1
  */
 public class FileOutput {
 
     Writer out = null;
     private String fileName;
 
+    /**
+     * FileOutput constructor creates new instance of FileOutput with a given fileName while checking to ensure the file exists.
+     * @param fileName name of the file to be output to
+     */
     public FileOutput(String fileName) {
         this.fileName = fileName;
         try {
@@ -20,6 +26,10 @@ public class FileOutput {
         }
     }
 
+    /**
+     * Writes a given String line to the file, while checking for file write errors in the process.
+     * @param line String line to be written to the file
+     */
     public void fileWrite(String line) {
         try {
             out.write(line+"\n");
@@ -29,6 +39,9 @@ public class FileOutput {
         }
     }
 
+    /**
+     * Closes the file, while catching any IOException errors in the process.
+     */
     public void fileClose() {
         if (out != null) {
             try {

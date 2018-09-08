@@ -6,6 +6,11 @@ import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ * Main method to demonstrate FileInput/Output methods.
+ * @author plee19
+ * @version 1
+ */
 public class Main {
 
     private final static FileInput cardAccts = new FileInput("movie_cards.csv");
@@ -56,12 +61,13 @@ public class Main {
         ratingsSum.fileWrite(results6);
 
         ratingsSum.fileClose();
-
-
-        // Open file for input and print a line for each movie rating, with count/total
-
     }
 
+    /**
+     * Method to count number of movies watched (tickets purchased) by a single account
+     * @param acct String account number
+     * @param nums integer array for a counter and sum value
+     */
     public static void findPurchases(String acct, int[] nums) {
         nums[0] = 0;
         nums[1] = 0;
@@ -81,6 +87,11 @@ public class Main {
         }
     }
 
+    /**
+     * Method to find the average rating given by a certain account
+     * @param acct String account number
+     * @param ratings integer array for a counter and sum value
+     */
     public static void findAvgRating(String acct, int[] ratings) {
         String line;
         String[] fields;
@@ -99,6 +110,10 @@ public class Main {
         }
     }
 
+    /**
+     * Method to build an ArrayList of only integer values for movie ratings
+     * @return ArrayList<Integer> of rating values
+     */
     public static ArrayList<Integer> buildRatingsArray() {
         String line;
         String[] fields;
