@@ -8,8 +8,8 @@ import java.io.*;
 
 public class FileOutputTest extends TestCase {
     FileOutput testOutput;
-    public final ByteArrayOutputStream outputStuff = new ByteArrayOutputStream();
-    public final PrintStream original = System.out;
+    private final ByteArrayOutputStream outputStuff = new ByteArrayOutputStream();
+    private final PrintStream original = System.out;
 
     @Before
     public void setUp() throws Exception {
@@ -34,6 +34,6 @@ public class FileOutputTest extends TestCase {
     public void testFileClose() {
         testOutput.fileClose();
         testOutput.fileWrite("Test closed");
-        assertEquals("File Write Error: testFileOutput.txt java.io.IOException: Stream closed\n",testOutput.toString());
+        assertEquals("File Write Error: testFileOutput.txt java.io.IOException: Stream closed\n",outputStuff.toString());
     }
 }
